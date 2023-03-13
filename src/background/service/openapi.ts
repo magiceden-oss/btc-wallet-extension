@@ -62,7 +62,7 @@ export class OpenApiService {
       c++;
     }
     const headers = new Headers();
-    headers.append('X-Client', 'UniSat Wallet');
+    headers.append('X-Client', 'Magic Eden Ordinals Wallet');
     headers.append('X-Version', process.env.release!);
     const res = await fetch(new Request(url), { method: 'GET', headers, mode: 'cors', cache: 'default' });
     const data = await res.json();
@@ -72,7 +72,7 @@ export class OpenApiService {
   httpPost = async (route: string, params: any) => {
     const url = this.getHost() + route;
     const headers = new Headers();
-    headers.append('X-Client', 'UniSat Wallet');
+    headers.append('X-Client', 'Magic Eden Ordinals Wallet');
     headers.append('X-Version', process.env.release!);
     headers.append('Content-Type', 'application/json;charset=utf-8');
     const res = await fetch(new Request(url), {

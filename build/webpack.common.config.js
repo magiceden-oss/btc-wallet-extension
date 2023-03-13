@@ -24,6 +24,7 @@ const config = (env) => {
   const paths = getBrowserPaths(env.browser);
   // Check if Tailwind config exists
   const useTailwind = fs.existsSync(path.join(paths.appPath, 'tailwind.config.js'));
+  console.log('Should be using tailwind', useTailwind)
 
   const shouldUseSourceMap = false;
   const imageInlineSizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT || '10000');
@@ -70,18 +71,18 @@ const config = (env) => {
             config: false,
             plugins: !useTailwind
               ? [
-                  'postcss-flexbugs-fixes',
-                  ['postcss-preset-env', { autoprefixer: { flexbox: 'no-2009' }, stage: 3 }],
-                  // Adds PostCSS Normalize as the reset css with default options,
-                  // so that it honors browserslist config in package.json
-                  // which in turn let's users customize the target behavior as per their needs.
-                  'postcss-normalize'
-                ]
+                'postcss-flexbugs-fixes',
+                ['postcss-preset-env', { autoprefixer: { flexbox: 'no-2009' }, stage: 3 }],
+                // Adds PostCSS Normalize as the reset css with default options,
+                // so that it honors browserslist config in package.json
+                // which in turn let's users customize the target behavior as per their needs.
+                'postcss-normalize'
+              ]
               : [
-                  'tailwindcss',
-                  'postcss-flexbugs-fixes',
-                  ['postcss-preset-env', { autoprefixer: { flexbox: 'no-2009' }, stage: 3 }]
-                ]
+                'tailwindcss',
+                'postcss-flexbugs-fixes',
+                ['postcss-preset-env', { autoprefixer: { flexbox: 'no-2009' }, stage: 3 }]
+              ]
           },
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment
         }
@@ -91,13 +92,13 @@ const config = (env) => {
       let preProcessorOptions = {
         sourceMap: true
       };
+      console.log('preProcessor', preProcessor)
       if (preProcessor === 'less-loader') {
         preProcessorOptions = {
           sourceMap: true,
-          // 自定义主题
           lessOptions: {
             modifyVars: {
-              'primary-color': 'rgb(234,202,68)',
+              'primary-color': '#E42575',
               'primary-color-active': '#383535',
               'input-icon-hover-color': '#FFFFFF',
               'component-background': '#1C1919',

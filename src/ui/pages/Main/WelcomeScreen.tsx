@@ -21,11 +21,10 @@ export default function WelcomeScreen() {
       }>
       <div className="flex flex-col items-center">
         <div className="flex items-center justify-center mb-10 gap-x-4 w-70">
-          <img src="./images/wallet-logo.png" className="w-16 h-16 select-none" alt="" />
-          <div className="text-4xl font-semibold tracking-widest select-none">UNISAT</div>
+          <img src="./images/me_btc_logo.png" className="h-16 select-none" alt="" />
         </div>
         <div className="font-normal opacity-60 mb-10 mx-15 text-center">
-          Inscribe and store your inscriptions in the world's first Open Source Chrome wallet for Ordinals!
+          Welcome to the Magic Eden Open Source Chrome wallet for Ordinals!
         </div>
 
         <div className="grid gap-5">

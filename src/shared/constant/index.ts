@@ -91,7 +91,7 @@ export const ADDRESS_TYPES = [
 ];
 
 export const NETWORK_TYPES = [
-  { value: NetworkType.MAINNET, label: 'LIVENET', name: 'livenet', validNames: [0, 'livenet', 'mainnet'] },
+  { value: NetworkType.MAINNET, label: 'MAINNET', name: 'livenet', validNames: [0, 'livenet', 'mainnet'] },
   { value: NetworkType.TESTNET, label: 'TESTNET', name: 'testnet', validNames: ['testnet'] }
 ];
 
@@ -113,7 +113,7 @@ export const WALLETCONNECT_STATUS_MAP = {
 export const INTERNAL_REQUEST_ORIGIN = 'https://unisat.io';
 
 export const INTERNAL_REQUEST_SESSION = {
-  name: 'UniSat Wallet',
+  name: 'Magic Eden Ordinals Wallet',
   origin: INTERNAL_REQUEST_ORIGIN,
   icon: './images/icon-128.png'
 };

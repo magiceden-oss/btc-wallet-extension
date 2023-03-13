@@ -21,8 +21,7 @@ const CHeader = ({ onBack, LeftComponent }: { onBack?: () => void; LeftComponent
       </div>
 
       <div className="flex flex-1 items-center justify-center">
-        <img src="./images/wallet-logo.png" className="w-10 h-10 select-none" alt="" />
-        <div className="text-2xl font-semibold tracking-widest select-none">UNISAT</div>
+        <img src="./images/me_btc_logo.png" className="h-16 select-none" alt="" />
       </div>
       <div className="flex-1"></div>
     </div>

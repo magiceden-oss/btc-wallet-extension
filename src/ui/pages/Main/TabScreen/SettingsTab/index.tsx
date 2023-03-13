@@ -14,6 +14,7 @@ import { RightOutlined } from '@ant-design/icons';
 
 interface Setting {
   label?: string;
+  subLabel?: string;
   value?: string;
   desc?: string;
   danger?: boolean;
@@ -26,6 +27,7 @@ interface Setting {
 const SettingList: Setting[] = [
   {
     label: t('Address Type'),
+    subLabel: 'To trade on ME, always use P2WPKH',
     value: t('Taproot'),
     desc: '',
     action: 'addressType',
@@ -126,6 +128,7 @@ const MyItem: React.FC<MyItemProps> = forwardRef(({ item, key, navigate }, ref) 
       <div className="flex items-center justify-between font-semibold text-4_5">
         <div className="flex flex-col text-left gap-2_5">
           <span>{item.label}</span>
+          <span className="text-sm">{item.subLabel}</span>
           <span className="font-normal opacity-60">{item.value}</span>
         </div>
         <div className="flex-grow">{item.desc}</div>
@@ -277,6 +280,21 @@ export default function SettingsTab() {
           }}>
           {(item, index) => <MyItem key={index} navigate={navigate} item={item} />}
         </VirtualList>
+      </div>
+      <div className="mt-5 font-semibold text-sm text-center text-white p-5">
+        This is an{' '}
+        <a
+          href="https://github.com/magiceden-oss/btc-wallet-extension"
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary">
+          open source fork
+        </a>{' '}
+        of Unisat maintained and published by{' '}
+        <a href="https://magiceden.io/" target="_blank" rel="noreferrer" className="text-primary">
+          Magic Eden
+        </a>
+        .
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ import { useWallet } from '@/ui/utils';
 
 import { useNavigate } from '../../MainRoute';
 import AppTab from './AppTab';
-import MintTab from './MintTab';
+import ExploreTab from './ExploreTab';
 import SettingsTab from './SettingsTab';
 import WalletTab from './WalletTab';
 
@@ -86,7 +86,7 @@ export default function MainScreen() {
         {tab == 'home' ? (
           <WalletTab />
         ) : tab == 'mint' ? (
-          <MintTab />
+          <ExploreTab />
         ) : tab == 'app' ? (
           <AppTab />
         ) : tab == 'settings' ? (
@@ -96,11 +96,9 @@ export default function MainScreen() {
         )}
       </Content>
       <Footer style={{ height: '5.625rem', bottom: 0 }}>
-        <div className="grid w-full h-full grid-cols-4 text-2xl border-white bg-soft-black border-opacity-10">
+        <div className="grid w-full h-full grid-cols-3 text-2xl border-white bg-soft-black border-opacity-10">
           <TabButton tabName="home" icon="wallet" />
           <TabButton tabName="mint" icon="compass" />
-          <TabButton tabName="app" icon="grid" />
-
           <TabButton tabName="settings" icon="gear" />
         </div>
       </Footer>
